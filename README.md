@@ -1,11 +1,11 @@
-# Chainlink
+# Chainlink-WASM
 
-[![Join the chat at https://gitter.im/smartcontractkit-chainlink/Lobby](https://badges.gitter.im/smartcontractkit-chainlink/Lobby.svg)](https://gitter.im/smartcontractkit-chainlink/Lobby)
-[![CircleCI](https://circleci.com/gh/smartcontractkit/chainlink.svg?style=shield)](https://circleci.com/gh/smartcontractkit/chainlink)
-[![Go Report Card](https://goreportcard.com/badge/github.com/smartcontractkit/chainlink)](https://goreportcard.com/report/github.com/smartcontractkit/chainlink)
-[![GoDoc](https://godoc.org/github.com/smartcontractkit/chainlink?status.svg)](https://godoc.org/github.com/smartcontractkit/chainlink)
-[![Maintainability](https://api.codeclimate.com/v1/badges/273722bb9f6f22d799bd/maintainability)](https://codeclimate.com/github/smartcontractkit/chainlink/maintainability)
-[![Test Coverage](https://api.codeclimate.com/v1/badges/273722bb9f6f22d799bd/test_coverage)](https://codeclimate.com/github/smartcontractkit/chainlink/test_coverage)
+## **NOTE**
+
+This is a fork of Chainlink which supports an alternative WASM run executor.
+See [WASM.md](WASM.md) for more details.
+
+---
 
 Chainlink is middleware to simplify communication with blockchains.
 Here you'll find the Chainlink Golang node, currently in alpha.
@@ -29,14 +29,14 @@ Examples of how to utilize and integrate Chainlinks can be found in the [example
 
 1. [Install Go 1.12+](https://golang.org/doc/install#install), and add your GOPATH's [bin directory to your PATH](https://golang.org/doc/code.html#GOPATH)
 2. Install [NodeJS](https://nodejs.org/en/download/package-manager/) & [Yarn](https://yarnpkg.com/lang/en/docs/install/)
-3. Download Chainlink: `git clone https://github.com/smartcontractkit/chainlink && cd chainlink`
+3. Download Chainlink: `go get -d github.com/j16r/chainlink && cd $GOPATH/src/github.com/j16r/chainlink`
 4. Build and install Chainlink: `make install`
 5. Run the node: `chainlink help`
 
 ### Ethereum Node Requirements
 
 In order to run the Chainlink node you must have access to a running Ethereum node with an open websocket connection.
-Any Ethereum based network will work once you've [configured](https://github.com/smartcontractkit/chainlink#configure) the chain ID.
+Any Ethereum based network will work once you've [configured](https://github.com/j16r/chainlink#configure) the chain ID.
 Ethereum node versions currently tested and supported:
 
 - [Parity 1.11+](https://github.com/paritytech/parity-ethereum/releases) (due to a [fix with pubsub](https://github.com/paritytech/parity/issues/6590).)
@@ -44,7 +44,7 @@ Ethereum node versions currently tested and supported:
 
 ## Run
 
-**NOTE**: By default, chainlink will run in TLS mode. For local development you can either disable this by setting CHAINLINK_DEV to true, or generate self signed certificates using `tools/bin/self-signed-certs` or [manually](https://github.com/smartcontractkit/chainlink/wiki/Creating-Self-Signed-Certificates).
+**NOTE**: By default, chainlink will run in TLS mode. For local development you can either disable this by setting CHAINLINK_DEV to true, or generate self signed certificates using `tools/bin/self-signed-certs` or [manually](https://github.com/j16r/chainlink/wiki/Creating-Self-Signed-Certificates).
 
 To start your Chainlink node, simply run:
 
@@ -68,7 +68,7 @@ $ chainlink show $JOB_ID
 
 To find out more about the Chainlink CLI, you can always run `chainlink help`.
 
-Check out the [wiki](https://github.com/smartcontractkit/chainlink/wiki)'s pages on [Adapters](https://github.com/smartcontractkit/chainlink/wiki/Adapters) and [Initiators](https://github.com/smartcontractkit/chainlink/wiki/Initiators) to learn more about how to create Jobs and Runs.
+Check out the [wiki](https://github.com/j16r/chainlink/wiki)'s pages on [Adapters](https://github.com/j16r/chainlink/wiki/Adapters) and [Initiators](https://github.com/j16r/chainlink/wiki/Initiators) to learn more about how to create Jobs and Runs.
 
 ## Configure
 
@@ -94,11 +94,11 @@ This project contains several sub-projects, some with their own documentation.
 External adapters are what make Chainlink easily extensible, providing simple integration of custom computations and specialized APIs.
 A Chainlink node communicates with external adapters via a simple REST API.
 
-For more information on creating and using external adapters, please see our [external adapters page](https://github.com/smartcontractkit/chainlink/wiki/External-Adapters).
+For more information on creating and using external adapters, please see our [external adapters page](https://github.com/j16r/chainlink/wiki/External-Adapters).
 
 ## Development Setup
 
-For the latest information on setting up a development environment, see the [guide here](https://github.com/smartcontractkit/chainlink/wiki/Development-Setup-Guide).
+For the latest information on setting up a development environment, see the [guide here](https://github.com/j16r/chainlink/wiki/Development-Setup-Guide).
 
 ### Build your current version
 
@@ -147,11 +147,11 @@ $ yarn run test-sol
 
 ### Development Tips
 
-For more tips on how to build and test Chainlink, see our [development tips page](https://github.com/smartcontractkit/chainlink/wiki/Development-Tips).
+For more tips on how to build and test Chainlink, see our [development tips page](https://github.com/j16r/chainlink/wiki/Development-Tips).
 
 ## Contributing
 
-Chainlink's source code is [licensed under the MIT License](https://github.com/smartcontractkit/chainlink/blob/master/LICENSE), and contributions are welcome.
+Chainlink's source code is [licensed under the MIT License](https://github.com/j16r/chainlink/blob/master/LICENSE), and contributions are welcome.
 
 Please check out our [contributing guidelines](./docs/CONTRIBUTING.md) for more details.
 
